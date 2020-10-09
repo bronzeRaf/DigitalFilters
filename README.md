@@ -6,7 +6,7 @@ This  is a set of scripts that contain an implementation of a Wiener filter calc
 
 **Wien0.m** contains a comparison between an exact Wiener-Hopf algorithm and a steepest descent algorithm to calculate the Wiener filter coefficients. The two algorithms are compared based on their runtime and their accuracy. For the comparison, a sinoid is used to represent the signal and a white noise  to represent the noise that the filters should cutoff. 
 
-**Wien1.m** contains an example that uses the purposed steepest descent algorithm and the Wiener-Hopf algorithm to apply a Wiener filter to a song. The song could be found in the "sounds.mat" and consist of:
+**Wien1.m** contains an example that uses the purposed steepest descent algorithm to apply a Wiener filter to a song. The song could be found in the "sounds.mat" and consist of:
 - d > the instrumental including the noise
 - u > the recording of the noise
 - x > the clear instrumental

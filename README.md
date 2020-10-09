@@ -15,11 +15,7 @@ This  is a set of scripts that contain an implementation of a Wiener filter calc
 - The Wiener-Hopf algorithm is exact but requires heavy computational resources. 
 - The steepest descent algorithms uses an iterative method to approach the solution way faster. 
 - The steepest descent algorithm may need optimization, on the learning rate and the number of iterations in some cases. In this case it is optimized for general purpose filters.
+- The Parameter Error (calculated vs exact coefficients) could get very low, increasing the number of iterations. This could have only a small impact on the rutime (~1 sec for 10 times more iterations).
 
-More specifications could be found in the table below:
-
-|  Algorithm                   | Runtime  | Number of Coeffiecients | Parameter Error |
-|------------------------------|----------|-------------------------|-----------------|
-| Wiener-Hopf                  | 326 secs | 500                     | 0               |
-| Steepest Descent (3000 iter) |          | 500                     |                 |
+More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the learning rate and the number of iterations of the steepest descent algorithm.
 

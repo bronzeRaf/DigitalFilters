@@ -36,7 +36,7 @@ The 4 implementations of the BlockLMS algorithm are in the "implementations" fol
 
 In the implementations a set of helping file has been used. The helping files are store in the "helpers" folder and their summary is:
 
-**plant.p** An unknown system we would like to model, using Block LMS.
+**plant.p** An unknown sample system we would like to model, using Block LMS.
 
 **fastMul.m** An approximate O(n logn) implementation fuction of a multiplication y=Tw, where T is a Toeplitz matrix and w is vector.
 
@@ -54,5 +54,35 @@ In the implementations a set of helping file has been used. The helping files ar
 - Frequency domain methods seem to give the fastest and more efficient solution to the BlockLMS algorithm.
 
 More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the learning rate.
+
+## StraightElimination
+This  is a set of scripts and functions that contain a filter of periodic noise without a reference signal, based on a Wiener filter. 
+
+The 3 main scripts of the project are the following:
+
+**matVec.m** contains a mathematical proof that if Rw = r<sup>B</sup> then R<sup>T</sup>w<sup>B</sup> = r, where R is a complex Toeplitz matrix with the upper triangular part to be the complex conjugate of the lower triangular part and w, r vectors. With T we symbolize the Transpose matrix and with B the reversed element order vector.
+
+**AugmWiener.m** contains an calculation of the augmented Wiener-Hopf equations using the Lagrange method.
+
+**EliminateStraight.m** contains a calculation of the optimal Wiener filter coefficients, as well as an implementation to eliminate a periodic noise from a signal, without a reference, using a Regression Filter and a Joint Process Estimator.
+
+In the implementations a set of helping file has been used. The helping files are store in the "helpers" folder and their summary is:
+
+**LevinsonDurbin_iterative.m** An implementation of the Levinson-Durbin algorithm to calculate the Gamma values.
+
+**jointProcessFilter.m** An implementation of a Joint Process Filter, to apply regression filters.
+
+In the project there are also some resources found in the "resource" folder and their summary is:
+
+**music.mat** A sample Matlab workspace with an example music track, including the periodic noise.
+
+**times.txt** A text file containing  the runtimes of the Wiener, Levinson-Durbin and Regression Filter coefficient calculations, for 100, 500 and 1024 coefficients.
+
+#### Conclusions
+- Optimal Wiener Filters eliminate this kind of noises with a similar, or an even smaller computational complexity with Regression Filter. 
+- Regression Filters with many coefficients require a heavy computational effort.
+- The elimination of periodic noise without reference signals is possible in a good manner but it could affect the final volume of the signal
+
+More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the coefficients' number.
 
 

@@ -12,12 +12,6 @@ This  is a set of scripts that contain an implementation of a Wiener filter calc
 - u > the recording of the noise
 - x > the clear instrumental
 
-#### Conclusions
-- The Wiener-Hopf algorithm is exact but requires heavy computational resources. 
-- The steepest descent algorithms uses an iterative method to approach the solution way faster. 
-- The steepest descent algorithm may need optimization, on the learning rate and the number of iterations in some cases. In this case it is optimized for general purpose filters.
-- The Parameter Error (calculated vs exact coefficients) could get very low, increasing the number of iterations. This could have only a small impact on the rutime (~1 sec for 10 times more iterations).
-
 More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the learning rate and the number of iterations of the steepest descent algorithm.
 
 
@@ -46,13 +40,6 @@ In the implementations a set of helping file has been used. The helping files ar
 
 **modelPlant.m** A script to compare the 4 different implementations of the Block LMS algorithm (found in implementations folder) with the unknown system plant.p and white noise as an input. Presents plots and outputs with the runtime and the errors of these implementations.
 
-
-#### Conclusions
-- **blocklms3** outperforms the rest of the implementations with best runtime and error specification. 
-- **blocklms4** has the worst error but the best runtime. It was expected, as unconstrained methods give a faster convergence.
-- **blocklms1** and **blocklms2** give a way slower convergence and a similar error with the frequency domain methods .
-- Frequency domain methods seem to give the fastest and more efficient solution to the BlockLMS algorithm.
-
 More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the learning rate.
 
 ## StraightElimination
@@ -72,17 +59,29 @@ In the implementations a set of helping file has been used. The helping files ar
 
 **jointProcessFilter.m** An implementation of a Joint Process Filter, to apply regression filters.
 
-In the project there are also some resources found in the "resource" folder and their summary is:
+In the project there are also some resources found in the "resources" folder and their summary is:
 
 **music.mat** A sample Matlab workspace with an example music track, including the periodic noise.
 
 **times.txt** A text file containing  the runtimes of the Wiener, Levinson-Durbin and Regression Filter coefficient calculations, for 100, 500 and 1024 coefficients.
 
-#### Conclusions
-- Optimal Wiener Filters eliminate this kind of noises with a similar, or an even smaller computational complexity with Regression Filter. 
-- Regression Filters with many coefficients require a heavy computational effort.
-- The elimination of periodic noise without reference signals is possible in a good manner but it could affect the final volume of the signal
-
 More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the coefficients' number.
 
+
+## EchoCancellation
+This  is a set of scripts that contain a noise cancellation filter, based on a Wiener filter. It is a comparison between an LMS, a normalized LMS and a RLS algorithm
+
+The 2 main scripts of the project are the following:
+
+**EchoCancelation1.m** contains the calculations of the optimal Wiener filter coefficients and the coefficients of the 3 algorithms LMS, normalized LMS and RLS to summarize their comparison.
+
+**EchoCancelation2.m** contains an example appliance of the 4 different filters (Wiener, LMS, normalized LMS and RLS) to a speech signal (resources/speakerB.mat) suffering from echo of another speech signal (resources/speakerA.mat).
+
+In the project there are also some resources found in the "resources" folder and their summary is:
+
+**speakerA.mat** A sample Matlab workspace with a speech sound signal.
+
+**speakerB.mat** A sample Matlab workspace with a speech sound signal suffering an echo, from delays of the speakerA.mat sound signal.
+
+More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the coefficients' number.
 

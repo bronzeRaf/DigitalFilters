@@ -69,7 +69,7 @@ More specifications could be found in the scripts. The scripts plot all the info
 
 
 ## EchoCancellation
-This  is a set of scripts that contain a noise cancellation filter, based on a Wiener filter. It is a comparison between an LMS, a normalized LMS and a RLS algorithm
+This  is a set of scripts that contain a noise cancellation filter, based on a Wiener filter. It is a comparison between an LMS, a normalized LMS and a RLS algorithm.
 
 The 2 main scripts of the project are the following:
 
@@ -85,3 +85,11 @@ In the project there are also some resources found in the "resources" folder and
 
 More specifications could be found in the scripts. The scripts plot all the information of the comparison. Feel free to test changing the coefficients' number.
 
+## Backpropagation
+A Neural Network classifier trained using backpropagation.
+
+The implementation is using the iris dataset in a Neural Network with backpropagation to train a classifier. The Network uses 4 input neuros, 1 hidden layer of 3 neurons and an output layer of 3 neurons. 
+
+**nnClassifier.m** contains the training algorithm of the neural network.
+
+More specifications could be found in the scripts. The scripts plot all the information of the training process. Feel free to test changing the epoch number, the learning rate or any other parameter.
